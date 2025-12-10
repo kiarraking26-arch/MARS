@@ -1,12 +1,38 @@
-# MARS
-MARS (official) MIPS Assembler and Runtime Simulator
+Basic Instructions:
 
- MARS is a lightweight interactive development environment (IDE) for programming in MIPS assembly language, intended for educational-level use with Patterson and Hennessy's Computer Organization and Design.
+cast (I) cast $t0, imm
+brew (R) brew
+tp (I) tp $t0, label
+learn (R) learn $t0
+use (R) use
+curse (R) curse $t0
 
- It is available for you to download as an executable JAR file.  Click the MARS v.4.5 link at right, under Releases, to access the download.
+Magic Operations:
 
- We have relocated the MARS website to  https://dpetersanderson.github.io/    There are still a couple of display issues to work out but all website content is there.  This includes all documentation and the JAR download.  We are not experienced in github so if you know a way we can host the website in this MARS repository let us know.
+WINGARDIUM (R) WINGARDIUM R1,R2,R3
+REDUCTO (R) REDUCTO R1,R2,R3
+MUFFLIATO (R) MUFFLIATO R1,R2,shamt
+QUIETUS (R) QUIETUS R1,R2,shamt
+SCURGIFY (R) SCURGIFY R1
+EXPECTO_PATRONUM (R) EXPECTO_PATRONUM R1
+AVADA_KEDAVRA (R) AVADA_KEDAVRA R1
+PROTEGO (R) PROTEGO R1,R2
+TIME_TURNER (R) TIME_TURNER R1,shamt
+POLYJUICE (R) POLYJUICE R1,R2
+CONFUNDO (R) CONFUNDO R1
+HORCRUX (R) HORCRUX R1,R2
+OBLIVIATE (I) OBLIVIATE R1,imm
+PORTKEY (I) PORTKEY R1,label
+GEMINO (R) GEMINO R1,R2
 
- This is the original MARS, developed by Pete Sanderson and Ken Vollmar.  Developed while Pete was professor at Otterbein University and Ken was professor at Missouri State University.  Both are now retired. This is a legacy application but is very stable and continues to be used by universities throughout the world as of 2024. The last release was MARS 4.5 in August 2014.  
- 
- Until October 2024 the MARS website, including executable JAR file download, was hosted by Missouri State University. That is no longer the case. That's why it is here.
+Example Program:
+
+brew
+cast $t0,5
+tp $t0,Destination
+
+Destination:
+learn $t0
+curse $t1
+use
+exit
