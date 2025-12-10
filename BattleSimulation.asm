@@ -2,44 +2,44 @@
 # Demonstrates casting spells, brewing potions, teleporting, and using items
 
 # Initialize player powers
-harddrop $t0, $zero, 5   # Player 1
-harddrop $t1, $zero, 3   # Player 2
-harddrop $t2, $zero, 7   # Player 3
+WINGARDIUM $t0,$zero,$t0
+WINGARDIUM $t1,$zero,$t1
+WINGARDIUM $t2,$zero,$t2
 
 # Brew potions
-brew
-brew
+EXPECTO_PATRONUM $t0
+EXPECTO_PATRONUM $t2
 
 # Learn new spells (double power)
-learn $t0
-learn $t2
+GEMINO $t0,$t0
+GEMINO $t2,$t2
 
 # Cast spells on opponents
-cast $t1, 2
-cast $t2, 3
+REDUCTO $t1,$t1,$t0
+REDUCTO $t2,$t2,$t1
 
 # Curse opponents
-curse $t1
-curse $t2
+PROTEGO $t1,$t1
+PROTEGO $t2,$t2
 
 # Teleport if enough power
-tp $t0, BattleStart
+PORTKEY $t0,BattleStart
 
 # Use magic items
-use
-use
+GEMINO $t0,$t1
+GEMINO $t2,$t3
 
 # Battle rounds loop
 BattleStart:
-cast $t0, 1
-cast $t1, 2
-learn $t0
-learn $t1
-downstack
-combo 3
-viewboard
+REDUCTO $t0,$t0,$t1
+REDUCTO $t1,$t1,$t2
+GEMINO $t0,$t0
+GEMINO $t1,$t1
+MUFFLIATO $t0,$t0,1
+TIME_TURNER $t1,3
+EXPECTO_PATRONUM $t2
 
 # Check for game over or all-clear
-topout
-allclear
-tetris
+AVADA_KEDAVRA $t0
+SCURGIFY $t1
+TIME_TURNER $t2,2
